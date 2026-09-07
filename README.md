@@ -1,43 +1,53 @@
-# sv
+# Svelte AdminLTE
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Base de integración de AdminLTE con SvelteKit.
 
-## Creating a project
+## Objetivo
 
-If you're seeing this, you've probably already done this step. Congrats!
+El propósito de este proyecto es implementar una estructura base de AdminLTE utilizando SvelteKit, sin necesidad de migrar o integrar todos los componentes disponibles en AdminLTE.
 
-```sh
-# create a new project
-npx sv create my-app
-```
+La finalidad es disponer de una plantilla administrativa funcional y reutilizable que sirva como punto de partida para futuros proyectos desarrollados en Svelte.
 
-To recreate this project with the same configuration:
+## Alcance inicial
 
-```sh
-# recreate this project
-npx sv@0.17.0 create --template minimal --no-types --add prettier --install npm app
-```
+La primera versión debe contemplar principalmente:
 
-## Developing
+- Layout principal del sistema.
+- Header / Navbar.
+- Sidebar.
+- Footer.
+- Área dinámica de contenido.
+- Menú lateral con navegación mediante SvelteKit.
+- Soporte para submenús.
+- Iconografía base.
+- Estilos principales de AdminLTE.
+- Estructura responsive.
+- Integración de Bootstrap y dependencias necesarias.
+- Separación de componentes reutilizables.
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+No se requiere implementar inicialmente todos los plugins, widgets, páginas de ejemplo o componentes disponibles en AdminLTE.
 
-```sh
-npm run dev
+## Estructura propuesta
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
-# svelte-adminlte
+src/
+├── lib/
+│ ├── assets/
+│ ├── components/
+│ │ └── layouts/
+│ │ ├── Header.svelte
+│ │ ├── Sidebar.svelte
+│ │ └── Footer.svelte
+│ └── index.js
+│
+├── routes/
+│ ├── (admin)/
+│ │ ├── +layout.svelte
+│ │ ├── +page.svelte
+│ │ └── configuracion/
+│ │ └── +page.svelte
+│ │
+│ └── (auth)/
+│ └── login/
+│ └── +page.svelte
+│
+└── app.html
