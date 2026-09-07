@@ -1,53 +1,70 @@
 # Svelte AdminLTE
 
-Base de integración de AdminLTE con SvelteKit.
+AdminLTE base implementation for SvelteKit.
 
-## Objetivo
+The goal of this project is to provide a reusable and modular
+AdminLTE structure adapted to SvelteKit.
 
-El propósito de este proyecto es implementar una estructura base de AdminLTE utilizando SvelteKit, sin necesidad de migrar o integrar todos los componentes disponibles en AdminLTE.
+This project does not aim to port the entire AdminLTE ecosystem.
+Instead, components and functionality will be progressively adapted
+using native Svelte patterns whenever possible.
 
-La finalidad es disponer de una plantilla administrativa funcional y reutilizable que sirva como punto de partida para futuros proyectos desarrollados en Svelte.
+## Goals
 
-## Alcance inicial
+- Provide an AdminLTE layout for SvelteKit
+- Create reusable Svelte components
+- Avoid unnecessary dependency on legacy JavaScript
+- Support SvelteKit routing
+- Provide responsive admin layouts
+- Keep the architecture simple and maintainable
+- Allow community contributions
 
-La primera versión debe contemplar principalmente:
+## Current Components
 
-- Layout principal del sistema.
-- Header / Navbar.
-- Sidebar.
-- Footer.
-- Área dinámica de contenido.
-- Menú lateral con navegación mediante SvelteKit.
-- Soporte para submenús.
-- Iconografía base.
-- Estilos principales de AdminLTE.
-- Estructura responsive.
-- Integración de Bootstrap y dependencias necesarias.
-- Separación de componentes reutilizables.
+- [x] Header
+- [x] Sidebar
+- [x] Footer
+- [ ] Sidebar menu
+- [ ] Treeview menu
+- [ ] Dashboard
+- [ ] Cards
+- [ ] Forms
+- [ ] Tables
+- [ ] Modals
+- [ ] Authentication layout
 
-No se requiere implementar inicialmente todos los plugins, widgets, páginas de ejemplo o componentes disponibles en AdminLTE.
-
-## Estructura propuesta
+## Project Structure
 
 src/
 ├── lib/
-│ ├── assets/
-│ ├── components/
-│ │ └── layouts/
-│ │ ├── Header.svelte
-│ │ ├── Sidebar.svelte
-│ │ └── Footer.svelte
-│ └── index.js
+│ └── components/
+│ └── layouts/
+│ ├── Header.svelte
+│ ├── Sidebar.svelte
+│ └── Footer.svelte
 │
-├── routes/
-│ ├── (admin)/
-│ │ ├── +layout.svelte
-│ │ ├── +page.svelte
-│ │ └── configuracion/
-│ │ └── +page.svelte
-│ │
-│ └── (auth)/
-│ └── login/
-│ └── +page.svelte
+└── routes/
+├── (admin)/
+│ └── +layout.svelte
 │
-└── app.html
+└── (auth)/
+
+## Development
+
+Install dependencies:
+
+npm install
+
+Start development server:
+
+npm run dev
+
+## Contributions
+
+Contributions are welcome.
+
+Before submitting a pull request, please read CONTRIBUTING.md.
+
+## License
+
+See LICENSE.
