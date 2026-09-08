@@ -2,8 +2,7 @@
 	import Footer from '$lib/components/layouts/Footer.svelte';
 	import Header from '$lib/components/layouts/Header.svelte';
 	import Sidebar from '$lib/components/layouts/Sidebar.svelte';
-	import PageHeader from '$lib/components/layouts/PageHeader.svelte';
-	
+
 	import { onMount } from 'svelte';
 
 	export const ssr = false;
@@ -15,6 +14,17 @@
 	function onClickSidebar() {
 		sidebarOpen = !sidebarOpen;
 	}
+
+	const dataSystem = {
+		empresa: {
+			razonSocial: 'Pisco Soluciones SA',
+			ruc: '10738604984'
+		},
+		usuario: {
+			nombre: 'Juan Pérez',
+			rol: 'Administrador'
+		}
+	};
 
 	$effect(() => {
 		if (typeof document === 'undefined') return;
@@ -53,23 +63,16 @@
 		crossorigin="anonymous"
 	/>
 
-	<link rel="stylesheet" href="./css/adminlte.css" />
+	<link rel="stylesheet" href="/css/adminlte.css" />
 </svelte:head>
 
 <div class="app-wrapper">
-	<Header {sidebarOpen} onToggleSidebar={onClickSidebar} />
+	<Header {sidebarOpen} onToggleSidebar={onClickSidebar} {dataSystem} />
 
 	<Sidebar {sidebarOpen} />
 
 	<main class="app-main">
-		 
-		<PageHeader />
-
-		<div class="app-content">
-			<div class="container-fluid">
-				{@render children()}
-			</div>
-		</div>
+		{@render children()}
 	</main>
 
 	<Footer />

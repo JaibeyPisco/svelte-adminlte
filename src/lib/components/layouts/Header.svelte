@@ -1,18 +1,12 @@
 <script>
 	import { onMount } from 'svelte';
 
-	let { sidebarOpen, onToggleSidebar } = $props();
+	let { sidebarOpen, onToggleSidebar, dataSystem } = $props();
 
 	let isFullScreen = $state(false);
 
-	const toggleFullScreen = () => {
-		if (!document.fullscreenEnabled) return;
-		if (document.fullscreenElement) {
-			document.exitFullscreen();
-		} else {
-			document.documentElement.requestFullscreen();
-		}
-	};
+	const usuario = dataSystem.usuario;
+	const empresa = dataSystem.empresa;
 
 	onMount(() => {
 		const handleFullScreenChange = () => {
@@ -25,6 +19,15 @@
 			document.removeEventListener('fullscreenchange', handleFullScreenChange);
 		};
 	});
+
+	const toggleFullScreen = () => {
+		if (!document.fullscreenEnabled) return;
+		if (document.fullscreenElement) {
+			document.exitFullscreen();
+		} else {
+			document.documentElement.requestFullscreen();
+		}
+	};
 </script>
 
 <!--begin::Header-->
@@ -46,6 +49,16 @@
 			</li>
 		</ul>
 		<!--end::Start Navbar Links-->
+
+		<!-- Información de empresa -->
+		{#if empresa}
+			<div class="ms-3 d-flex align-items-center">
+				<span class="fw-semibold">
+					RUC: {empresa.ruc} - {empresa.razonSocial}
+				</span>
+			</div>
+		{/if}
+		<!-- Información de empresa -->
 
 		<!--begin::End Navbar Links-->
 		<ul class="navbar-nav ms-auto">
