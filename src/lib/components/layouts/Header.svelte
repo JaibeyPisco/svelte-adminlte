@@ -1,162 +1,190 @@
 <script>
-  let {sidebarOpen, onToggleSidebar} = $props();
+	import { onMount } from 'svelte';
+
+	let { sidebarOpen, onToggleSidebar } = $props();
+
+	let isFullScreen = $state(false);
+
+	const toggleFullScreen = () => {
+		if (!document.fullscreenEnabled) return;
+		if (document.fullscreenElement) {
+			document.exitFullscreen();
+		} else {
+			document.documentElement.requestFullscreen();
+		}
+	};
+
+	onMount(() => {
+		const handleFullScreenChange = () => {
+			isFullScreen = !!document.fullscreenElement;
+		};
+
+		document.addEventListener('fullscreenchange', handleFullScreenChange);
+
+		return () => {
+			document.removeEventListener('fullscreenchange', handleFullScreenChange);
+		};
+	});
 </script>
+
 <!--begin::Header-->
-      <nav class="app-header navbar navbar-expand bg-body">
-        <!--begin::Container-->
-        <div class="container-fluid">
-          <!--begin::Start Navbar Links-->
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                type="button"
-                onclick={onToggleSidebar}
-                aria-label="Toggle sidebar"
-              >
-                <i class="bi bi-list"></i>
-              </a>
-            </li>
- 
-          </ul>
-          <!--end::Start Navbar Links-->
- 
-          <!--begin::End Navbar Links-->
-          <ul class="navbar-nav ms-auto">
-            <!--begin::Search (small screens: the field above is hidden, so link to the search page)-->
-            <li class="nav-item d-md-none">
-              <a class="nav-link" href="./pages/search-results.html" aria-label="Search">
-                <i class="bi bi-search" aria-hidden="true"></i>
-              </a>
-            </li>
-          
-     
-            <!--begin::Fullscreen Toggle-->
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="#"
-                data-lte-toggle="fullscreen"
-                aria-label="Toggle fullscreen"
-              >
-                <i data-lte-icon="maximize" class="bi bi-arrows-fullscreen"></i>
-                <i data-lte-icon="minimize" class="bi bi-fullscreen-exit d-none"></i>
-              </a>
-            </li>
-            <!--end::Fullscreen Toggle-->
+<nav class="app-header navbar navbar-expand bg-body">
+	<!--begin::Container-->
+	<div class="container-fluid">
+		<!--begin::Start Navbar Links-->
+		<ul class="navbar-nav">
+			<li class="nav-item">
+				<a
+					class="nav-link"
+					type="button"
+					href="javacript:;"
+					onclick={onToggleSidebar}
+					aria-label="Toggle sidebar"
+				>
+					<i class="bi bi-list"></i>
+				</a>
+			</li>
+		</ul>
+		<!--end::Start Navbar Links-->
 
-            <!--begin::Color Mode Toggle (#6010)-->
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link"
-                href="#"
-                id="bd-theme"
-                aria-label="Toggle color scheme"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                <i class="bi bi-sun-fill" data-lte-theme-icon="light"></i>
-                <i class="bi bi-moon-fill d-none" data-lte-theme-icon="dark"></i>
-                <i class="bi bi-circle-half d-none" data-lte-theme-icon="auto"></i>
-              </a>
-              <ul
-                class="dropdown-menu dropdown-menu-end"
-                aria-labelledby="bd-theme"
-                style="--bs-dropdown-min-width: 8rem"
-              >
-                <li>
-                  <button
-                    type="button"
-                    class="dropdown-item d-flex align-items-center"
-                    data-bs-theme-value="light"
-                    aria-pressed="false"
-                  >
-                    <i class="bi bi-sun-fill me-2"></i>
-                    Light
-                    <i class="bi bi-check-lg ms-auto d-none"></i>
-                  </button>
-                </li>
-                <li>
-                  <button
-                    type="button"
-                    class="dropdown-item d-flex align-items-center"
-                    data-bs-theme-value="dark"
-                    aria-pressed="false"
-                  >
-                    <i class="bi bi-moon-fill me-2"></i>
-                    Dark
-                    <i class="bi bi-check-lg ms-auto d-none"></i>
-                  </button>
-                </li>
-                <li>
-                  <button
-                    type="button"
-                    class="dropdown-item d-flex align-items-center active"
-                    data-bs-theme-value="auto"
-                    aria-pressed="true"
-                  >
-                    <i class="bi bi-circle-half me-2"></i>
-                    Auto
-                    <i class="bi bi-check-lg ms-auto d-none"></i>
-                  </button>
-                </li>
-              </ul>
-            </li>
-            <!--end::Color Mode Toggle-->
+		<!--begin::End Navbar Links-->
+		<ul class="navbar-nav ms-auto">
+			<!--begin::Search (small screens: the field above is hidden, so link to the search page)-->
+			<li class="nav-item d-md-none">
+				<a class="nav-link" href="./pages/search-results.html" aria-label="Search">
+					<i class="bi bi-search" aria-hidden="true"></i>
+				</a>
+			</li>
 
-            <!--begin::User Menu Dropdown-->
-            <li class="nav-item dropdown user-menu">
-              <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                <img
-                  src="./assets/img/user2-160x160.jpg"
-                  class="user-image rounded-circle shadow"
-                  alt="Alexander Pierce"
-                />
-                <span class="d-none d-md-inline">Alexander Pierce</span>
-              </a>
-              <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
-                <!--begin::User Image-->
-                <li class="user-header text-bg-primary">
-                  <img
-                    src="./assets/img/user2-160x160.jpg"
-                    class="rounded-circle shadow"
-                    alt="Alexander Pierce"
-                  />
-                  <p>
-                    Alexander Pierce - Web Developer
-                    <small>Member since Nov. 2023</small>
-                  </p>
-                </li>
-                <!--end::User Image-->
-                <!--begin::Menu Body-->
-                <li class="user-body">
-                  <!--begin::Row-->
-                  <div class="row">
-                    <div class="col-4 text-center">
-                      <a href="#">Followers</a>
-                    </div>
-                    <div class="col-4 text-center">
-                      <a href="#">Sales</a>
-                    </div>
-                    <div class="col-4 text-center">
-                      <a href="#">Friends</a>
-                    </div>
-                  </div>
-                  <!--end::Row-->
-                </li>
-                <!--end::Menu Body-->
-                <!--begin::Menu Footer-->
-                <li class="user-footer">
-                  <a href="#" class="btn btn-outline-secondary">Profile</a>
-                  <a href="#" class="btn btn-outline-danger float-end">Sign out</a>
-                </li>
-                <!--end::Menu Footer-->
-              </ul>
-            </li>
-            <!--end::User Menu Dropdown-->
-          </ul>
-          <!--end::End Navbar Links-->
-        </div>
-        <!--end::Container-->
-      </nav>
-      <!--end::Header-->
+			<!--begin::Fullscreen Toggle-->
+			<li class="nav-item">
+				<button
+					type="button"
+					class="nav-link border-0 bg-transparent"
+					onclick={toggleFullScreen}
+					aria-label={isFullScreen ? 'Exit fullscreen' : 'Enter fullscreen'}
+				>
+					{#if isFullScreen}
+						<i class="bi bi-fullscreen-exit"></i>
+					{:else}
+						<i class="bi bi-arrows-fullscreen"></i>
+					{/if}
+				</button>
+			</li>
+			<!--end::Fullscreen Toggle-->
+
+			<!--begin::Color Mode Toggle (#6010)-->
+			<li class="nav-item dropdown">
+				<a
+					class="nav-link"
+					href="#"
+					id="bd-theme"
+					aria-label="Toggle color scheme"
+					data-bs-toggle="dropdown"
+					aria-expanded="false"
+				>
+					<i class="bi bi-sun-fill" data-lte-theme-icon="light"></i>
+					<i class="bi bi-moon-fill d-none" data-lte-theme-icon="dark"></i>
+					<i class="bi bi-circle-half d-none" data-lte-theme-icon="auto"></i>
+				</a>
+				<ul
+					class="dropdown-menu dropdown-menu-end"
+					aria-labelledby="bd-theme"
+					style="--bs-dropdown-min-width: 8rem"
+				>
+					<li>
+						<button
+							type="button"
+							class="dropdown-item d-flex align-items-center"
+							data-bs-theme-value="light"
+							aria-pressed="false"
+						>
+							<i class="bi bi-sun-fill me-2"></i>
+							Light
+							<i class="bi bi-check-lg ms-auto d-none"></i>
+						</button>
+					</li>
+					<li>
+						<button
+							type="button"
+							class="dropdown-item d-flex align-items-center"
+							data-bs-theme-value="dark"
+							aria-pressed="false"
+						>
+							<i class="bi bi-moon-fill me-2"></i>
+							Dark
+							<i class="bi bi-check-lg ms-auto d-none"></i>
+						</button>
+					</li>
+					<li>
+						<button
+							type="button"
+							class="dropdown-item d-flex align-items-center active"
+							data-bs-theme-value="auto"
+							aria-pressed="true"
+						>
+							<i class="bi bi-circle-half me-2"></i>
+							Auto
+							<i class="bi bi-check-lg ms-auto d-none"></i>
+						</button>
+					</li>
+				</ul>
+			</li>
+			<!--end::Color Mode Toggle-->
+
+			<!--begin::User Menu Dropdown-->
+			<li class="nav-item dropdown user-menu">
+				<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+					<img
+						src="./assets/img/user2-160x160.jpg"
+						class="user-image rounded-circle shadow"
+						alt="Alexander Pierce"
+					/>
+					<span class="d-none d-md-inline">Alexander Pierce</span>
+				</a>
+				<ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
+					<!--begin::User Image-->
+					<li class="user-header text-bg-primary">
+						<img
+							src="./assets/img/user2-160x160.jpg"
+							class="rounded-circle shadow"
+							alt="Alexander Pierce"
+						/>
+						<p>
+							Alexander Pierce - Web Developer
+							<small>Member since Nov. 2023</small>
+						</p>
+					</li>
+					<!--end::User Image-->
+					<!--begin::Menu Body-->
+					<li class="user-body">
+						<!--begin::Row-->
+						<div class="row">
+							<div class="col-4 text-center">
+								<a href="#">Followers</a>
+							</div>
+							<div class="col-4 text-center">
+								<a href="#">Sales</a>
+							</div>
+							<div class="col-4 text-center">
+								<a href="#">Friends</a>
+							</div>
+						</div>
+						<!--end::Row-->
+					</li>
+					<!--end::Menu Body-->
+					<!--begin::Menu Footer-->
+					<li class="user-footer">
+						<a href="#" class="btn btn-outline-secondary">Profile</a>
+						<a href="#" class="btn btn-outline-danger float-end">Sign out</a>
+					</li>
+					<!--end::Menu Footer-->
+				</ul>
+			</li>
+			<!--end::User Menu Dropdown-->
+		</ul>
+		<!--end::End Navbar Links-->
+	</div>
+	<!--end::Container-->
+</nav>
+<!--end::Header-->
