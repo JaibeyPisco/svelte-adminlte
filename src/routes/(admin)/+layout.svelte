@@ -34,7 +34,13 @@
 		document.body.classList.toggle('sidebar-open', sidebarOpen);
 	});
 
-	onMount(() => {
+	onMount(async () => {
+		await import('bootstrap');
+
+		await import('overlayscrollbars');
+
+		// await import('admin-lte');
+
 		return () => {
 			document.body.classList.remove('sidebar-collapse');
 			document.body.classList.remove('sidebar-open');
