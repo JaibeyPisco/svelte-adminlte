@@ -16,6 +16,7 @@
 		"@sveltejs/adapter-static": "^3.0.10",
 		"@sveltejs/kit": "^2.63.0",
 		"@sveltejs/vite-plugin-svelte": "^7.1.2",
+		"json-server": "^1.0.0-beta.15",
 		"prettier": "^3.8.3",
 		"prettier-plugin-svelte": "^4.1.0",
 		"svelte": "^5.56.1",
@@ -25,6 +26,7 @@
 		"@popperjs/core": "^2.11.8",
 		"admin-lte": "^4.9.1",
 		"bootstrap": "^5.3.8",
-		"overlayscrollbars": "^2.16.0"
+		"overlayscrollbars": "^2.16.0",
+		"tabulator-tables": "^6.5.2"
 	}
 }

@@ -89,7 +89,7 @@
 			<ThemeToggle />
 
 			<!-- User dropdown -->
-			<UserMenu />
+			<UserMenu  {usuario} />
 		</ul>
 		<!--end::End Navbar Links-->
 	</div>

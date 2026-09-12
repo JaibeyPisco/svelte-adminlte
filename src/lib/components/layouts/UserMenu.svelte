@@ -1,50 +1,31 @@
+<script>
+    const {usuario} = $props();
+</script>
 <!--begin::User Menu Dropdown-->
 <li class="nav-item dropdown user-menu">
-	<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-		<img
-			src="/assets/img/user2-160x160.jpg"
-			class="user-image rounded-circle shadow"
-			alt="Alexander Pierce"
-		/>
-		<span class="d-none d-md-inline">Alexander Pierce</span>
-	</a>
-	<ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
-		<!--begin::User Image-->
-		<li class="user-header text-bg-primary">
-			<img
-				src="/assets/img/user2-160x160.jpg"
-				class="rounded-circle shadow"
-				alt="Alexander Pierce"
-			/>
-			<p>
-				Alexander Pierce - Web Developer
-				<small>Member since Nov. 2023</small>
-			</p>
-		</li>
-		<!--end::User Image-->
-		<!--begin::Menu Body-->
-		<li class="user-body">
-			<!--begin::Row-->
-			<div class="row">
-				<div class="col-4 text-center">
-					<a href="#">Followers</a>
-				</div>
-				<div class="col-4 text-center">
-					<a href="#">Sales</a>
-				</div>
-				<div class="col-4 text-center">
-					<a href="#">Friends</a>
-				</div>
-			</div>
-			<!--end::Row-->
-		</li>
-		<!--end::Menu Body-->
-		<!--begin::Menu Footer-->
-		<li class="user-footer">
-			<a href="#" class="btn btn-outline-secondary">Profile</a>
-			<a href="#" class="btn btn-outline-danger float-end">Sign out</a>
-		</li>
-		<!--end::Menu Footer-->
-	</ul>
+    <a href="#" class="nav-link dropdown-toggle d-flex align-items-center gap-2" data-bs-toggle="dropdown" aria-expanded="false">
+        <img src="/assets/img/user2-160x160.jpg" class="user-image rounded-circle shadow-sm" alt="Alexander Pierce" width="28" height="28" />
+        <span class="d-none d-md-inline fw-medium small">{usuario.nombre}</span>
+    </a>
+    
+    <ul class="dropdown-menu dropdown-menu-end shadow-lg p-2 border-0 rounded-3 mt-2" style="min-width: 230px;">
+        <!-- Cabecera de usuario -->
+        <li class="px-3 py-2 mb-1">
+            <div class="fw-semibold small text-truncate">{usuario.nombre}</div>
+            <div class="text-body-secondary text-truncate" style="font-size: 0.75rem;">{usuario.email}</div>
+            <span class="badge text-bg-primary-subtle text-primary border border-primary-subtle mt-2 fw-normal" style="font-size: 0.65rem;">Web Developer</span>
+        </li>
+        
+        
+        <li><hr class="dropdown-divider my-1"></li>
+        
+        <!-- Cerrar Sesión -->
+        <li>
+            <a class="dropdown-item d-flex align-items-center gap-2 py-1.5 px-3 rounded-2 text-danger" href="#">
+                <i class="bi bi-box-arrow-right fs-6 text-danger"></i>
+                <span class="small fw-medium">Cerrar sesión</span>
+            </a>
+        </li>
+    </ul>
 </li>
 <!--end::User Menu Dropdown-->

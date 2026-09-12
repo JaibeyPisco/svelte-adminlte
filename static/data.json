@@ -1,0 +1,40 @@
+{
+  "usuarios": [
+    {
+      "id": "1",
+      "nombre": "Olivia Bennett",
+      "email": "olivia@example.com",
+      "rol": "Administrador",
+      "estado": "ACTIVO"
+    },
+    {
+      "id": "2",
+      "nombre": "Liam Carter",
+      "email": "liam@example.com",
+      "rol": "Editor",
+      "estado": "ACTIVO"
+    },
+    {
+      "nombre": "NUEVO REGISTRO",
+      "email": "correo@gmail.com",
+      "rol": "Administrador",
+      "estado": "ACTIVO",
+      "id": "y0HpL11vwVo"
+    },
+    {
+      "nombre": "INTERESANTE",
+      "email": "correo",
+      "rol": "Administrador",
+      "estado": "ACTIVO",
+      "id": "VXNRJT6NP_Y"
+    },
+    {
+      "nombre": "@dmin",
+      "email": "clave.@gmail.com",
+      "rol": "Administrador",
+      "estado": "ACTIVO",
+      "id": "kGHbe1fiiDo"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
