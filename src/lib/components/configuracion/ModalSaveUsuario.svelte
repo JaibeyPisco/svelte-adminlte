@@ -13,10 +13,7 @@
 	let modo = $state('modo');
 
 	let { onSave = () => {} } = $props();
-
-	// export function cargar(callback) {
-	// 	onSave = callback;
-	// }
+ 
 
 	export function crear() {
 		modo = 'nuevo';

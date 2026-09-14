@@ -6,6 +6,21 @@ This project provides a reusable and modular AdminLTE structure adapted to Svelt
 
 The goal is not to port the entire AdminLTE ecosystem, but to progressively provide the essential components needed to build modern administrative applications with SvelteKit.
 
+## Features
+
+* AdminLTE layout adapted to SvelteKit
+* Reusable Svelte components
+* Responsive administrative interface
+* SvelteKit routing
+* Bootstrap 5 integration
+* AdminLTE 4 integration
+* Reusable data table component
+* Reusable modal component
+* Theme toggle
+* User menu
+* JSON Server development API
+* Minimal dependency approach
+
 ## Goals
 
 * Provide a reusable AdminLTE layout for SvelteKit
@@ -56,10 +71,11 @@ The goal is not to port the entire AdminLTE ecosystem, but to progressively prov
 
 The project aims to keep dependencies to a minimum.
 
-Current main dependencies:
+Main dependencies:
 
 * **SvelteKit** — application framework
-* **AdminLTE** — administrative UI
+* **Svelte** — UI framework
+* **AdminLTE** — administrative interface
 * **Bootstrap** — styling and UI utilities
 * **Tabulator** — advanced data tables
 * **OverlayScrollbars** — custom scrollbars
@@ -213,6 +229,8 @@ PUBLIC_API_URL=http://localhost:3000
 ```
 
 This variable defines the base URL used by the API helper.
+
+The `.env` file should not be committed to the repository. Use `.env.example` to provide the required environment variables for other developers.
 
 ## Contributing
 

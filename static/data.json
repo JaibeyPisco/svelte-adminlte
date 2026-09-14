@@ -34,6 +34,20 @@
       "rol": "Administrador",
       "estado": "ACTIVO",
       "id": "kGHbe1fiiDo"
+    },
+    {
+      "nombre": "sdasdas",
+      "email": "dasdasd",
+      "rol": "Administrador",
+      "estado": "ACTIVO",
+      "id": "Ka8GqIIg2Cg"
+    },
+    {
+      "nombre": "dfsdfs",
+      "email": "dsfsdfsdf",
+      "rol": "Administrador",
+      "estado": "ACTIVO",
+      "id": "AcVTelnuPpM"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

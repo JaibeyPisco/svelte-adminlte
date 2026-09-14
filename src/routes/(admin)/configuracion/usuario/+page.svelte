@@ -30,38 +30,10 @@
 		Notificacion(response.mensaje, 'success');
 
 		await cargarUsuarios();
-		// const data = response.data;
-
-		// usuarios = [
-		// 	...usuarios,
-		// 	{
-		// 		id: 3,
-		// 		nombre: data.nombre,
-		// 		email: data.correo,
-		// 		rol: data.rol,
-		// 		estado: data.estado
-		// 	}
-		// ];
-
-		// datatable.reload(usuarios);
+ 
 	};
 
-	// const usuarios = [
-	// 	{
-	// 		id: 1,
-	// 		nombre: 'Olivia Bennett',
-	// 		email: 'olivia@example.com',
-	// 		rol: 'Administrador',
-	// 		estado: 'ACTIVO'
-	// 	},
-	// 	{
-	// 		id: 2,
-	// 		nombre: 'Liam Carter',
-	// 		email: 'liam@example.com',
-	// 		rol: 'Editor',
-	// 		estado: 'ACTIVO'
-	// 	}
-	// ];
+ 
 
 	const columns = [
 		// {
@@ -115,3 +87,37 @@
 
 	<ModalSaveUsuario bind:this={modalSaveUsuario} onSave={reloadTable} />
 </PageLayout>
+ <style>
+/* Custom modifications overriding default Bootstrap card styles */
+.card-custom {
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Add a sleek lifting effect on hover */
+.card-custom:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Custom internal button styling */
+.btn-custom {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.btn-custom:hover {
+  color: #fff;
+  opacity: 0.9;
+}
+
+</style>
