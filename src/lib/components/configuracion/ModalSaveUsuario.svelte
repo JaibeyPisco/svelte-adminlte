@@ -22,6 +22,7 @@
 			nombre: '',
 			correo: '',
 			rol: '',
+			password: '',
 			estado: 'ACTIVO'
 		};
 
@@ -34,7 +35,8 @@
 			id: data.id,
 			nombre: data.nombre,
 			correo: '',
-			rol: ''
+			rol: '',
+			password: ''
 		};
 
 		modal.open();
@@ -44,7 +46,8 @@
 			nombre: form.nombre,
 			email: form.correo,
 			rol: form.rol,
-			estado: form.estado
+			estado: form.estado,
+			password: form.password
 		});
 
 		onSave({
@@ -79,6 +82,17 @@
 				type="email"
 				class="form-control form-control-sm"
 				bind:value={form.correo}
+				autocomplete="off"
+			/>
+		</div>
+
+		<div class="mb-3">
+			<label class="form-label" for=""> Contraseña </label>
+
+			<input
+				type="text"
+				class="form-control form-control-sm"
+				bind:value={form.password}
 				autocomplete="off"
 			/>
 		</div>

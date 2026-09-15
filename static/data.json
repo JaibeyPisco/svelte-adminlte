@@ -1,53 +1,12 @@
 {
   "usuarios": [
     {
-      "id": "1",
-      "nombre": "Olivia Bennett",
-      "email": "olivia@example.com",
-      "rol": "Administrador",
-      "estado": "ACTIVO"
-    },
-    {
-      "id": "2",
-      "nombre": "Liam Carter",
-      "email": "liam@example.com",
+      "nombre": "asdasd",
+      "email": "jaibey@gmail.com",
       "rol": "Editor",
-      "estado": "ACTIVO"
-    },
-    {
-      "nombre": "NUEVO REGISTRO",
-      "email": "correo@gmail.com",
-      "rol": "Administrador",
       "estado": "ACTIVO",
-      "id": "y0HpL11vwVo"
-    },
-    {
-      "nombre": "INTERESANTE",
-      "email": "correo",
-      "rol": "Administrador",
-      "estado": "ACTIVO",
-      "id": "VXNRJT6NP_Y"
-    },
-    {
-      "nombre": "@dmin",
-      "email": "clave.@gmail.com",
-      "rol": "Administrador",
-      "estado": "ACTIVO",
-      "id": "kGHbe1fiiDo"
-    },
-    {
-      "nombre": "sdasdas",
-      "email": "dasdasd",
-      "rol": "Administrador",
-      "estado": "ACTIVO",
-      "id": "Ka8GqIIg2Cg"
-    },
-    {
-      "nombre": "dfsdfs",
-      "email": "dsfsdfsdf",
-      "rol": "Administrador",
-      "estado": "ACTIVO",
-      "id": "AcVTelnuPpM"
+      "password": "password",
+      "id": "QTbUilOk7AI"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

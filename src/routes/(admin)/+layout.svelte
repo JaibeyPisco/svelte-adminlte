@@ -87,7 +87,7 @@
 	<Footer />
 </div>
 
-<!-- Notificacio -->
+<!-- Notificacion -->
 <div
     id="toast"
        class="toast align-items-center border-0 position-fixed top-0 start-50 translate-middle-x mt-3"

@@ -4,6 +4,7 @@
 	import Notificacion from '$lib/utils/Notificacion';
 	import Datatable from '$lib/components/shared/Datatable.svelte';
 	import { onMount } from 'svelte';
+	import API from '$lib/utils/API';
 
 	const breadcrumb = ['Configuración', 'Usuarios'];
 
@@ -17,9 +18,8 @@
 	};
 
 	const cargarUsuarios = async () => {
-		const response = await fetch('http://localhost:3000/usuarios');
-
-		const data = await response.json();
+ 
+		const data = await API.get('/usuarios');
 
 		usuarios = data;
 
@@ -27,13 +27,11 @@
 	};
 
 	const reloadTable = async (response) => {
+		
 		Notificacion(response.mensaje, 'success');
 
 		await cargarUsuarios();
- 
 	};
-
- 
 
 	const columns = [
 		// {
@@ -48,6 +46,10 @@
 		{
 			title: 'Correo',
 			field: 'email'
+		},
+		{
+			title: 'Contraseña',
+			field: 'password'
 		},
 		{
 			title: 'Rol',
@@ -73,7 +75,7 @@
 
 <PageLayout {breadcrumb}>
 	{#snippet actions()}
-		<button class="btn btn-primary" onclick={openModal}>
+		<button class="btn btn-primary btn-sm" onclick={openModal}>
 			<i class="bi bi-plus-lg me-1"></i>
 			Nuevo
 		</button>
@@ -87,37 +89,39 @@
 
 	<ModalSaveUsuario bind:this={modalSaveUsuario} onSave={reloadTable} />
 </PageLayout>
- <style>
-/* Custom modifications overriding default Bootstrap card styles */
-.card-custom {
-  border: none;
-  border-radius: 16px;
-  overflow: hidden;
-  background: #ffffff;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
 
-/* Add a sleek lifting effect on hover */
-.card-custom:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-}
+<style>
+	/* Custom modifications overriding default Bootstrap card styles */
+	.card-custom {
+		border: none;
+		border-radius: 16px;
+		overflow: hidden;
+		background: #ffffff;
+		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+		transition:
+			transform 0.3s ease,
+			box-shadow 0.3s ease;
+	}
 
-/* Custom internal button styling */
-.btn-custom {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  padding: 10px 20px;
-  font-weight: 500;
-  transition: opacity 0.2s ease;
-}
+	/* Add a sleek lifting effect on hover */
+	.card-custom:hover {
+		transform: translateY(-8px);
+		box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+	}
 
-.btn-custom:hover {
-  color: #fff;
-  opacity: 0.9;
-}
+	/* Custom internal button styling */
+	.btn-custom {
+		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+		color: #fff;
+		border: none;
+		border-radius: 8px;
+		padding: 10px 20px;
+		font-weight: 500;
+		transition: opacity 0.2s ease;
+	}
 
+	.btn-custom:hover {
+		color: #fff;
+		opacity: 0.9;
+	}
 </style>

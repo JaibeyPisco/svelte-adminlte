@@ -11,7 +11,7 @@
 
 	let tableElement;
 	let table;
-	let search = '';
+	let search = $state('');
 
 	onMount(() => {
 		table = new Tabulator(tableElement, {
@@ -90,15 +90,15 @@
 	};
 </script>
 
-<div class="d-flex justify-content-between align-items-center  m-1">
+<div class="d-flex justify-content-between align-items-center m-1">
 	<div class="btn-group" role="group">
 		<button class="btn btn-default btn-sm" type="button" onclick={exportExcel}> Excel </button>
 
-		<button class="btn  btn-default btn-sm" type="button" onclick={exportPDF}> PDF </button>
+		<button class="btn btn-default btn-sm" type="button" onclick={exportPDF}> PDF </button>
 
 		<div class="btn-group" role="group">
 			<button
-				class="btn  btn-default btn-sm dropdown-toggle"
+				class="btn btn-default btn-sm dropdown-toggle"
 				type="button"
 				data-bs-toggle="dropdown"
 				aria-expanded="false"
@@ -129,6 +129,7 @@
 	</div>
 </div>
 <div bind:this={tableElement}></div>
+
 <style>
 	/* TABLA */
 	:global(.tabulator) {
@@ -143,31 +144,31 @@
 	}
 
 	/* HEADER */
-:global(.tabulator .tabulator-header) {
-	background-color: #f8f9fa;
-	border-bottom: 1px solid #dee2e6;
-	color: #495057;
-	font-weight: 600;
-}
+	:global(.tabulator .tabulator-header) {
+		background-color: #f8f9fa;
+		border-bottom: 1px solid #dee2e6;
+		color: #495057;
+		font-weight: 600;
+	}
 
-:global(.tabulator .tabulator-header .tabulator-col) {
-	background-color: transparent;
-	border-right: 1px solid #e9ecef;
-}
+	:global(.tabulator .tabulator-header .tabulator-col) {
+		background-color: transparent;
+		border-right: 1px solid #e9ecef;
+	}
 
-:global(.tabulator .tabulator-header .tabulator-col:last-child) {
-	border-right: none;
-}
+	:global(.tabulator .tabulator-header .tabulator-col:last-child) {
+		border-right: none;
+	}
 
-:global(.tabulator .tabulator-header .tabulator-col .tabulator-col-content) {
-	padding: 0.3rem 0.625rem;
-}
+	:global(.tabulator .tabulator-header .tabulator-col .tabulator-col-content) {
+		padding: 0.3rem 0.625rem;
+	}
 
-:global(.tabulator .tabulator-header .tabulator-col-title) {
-	font-size: 0.75rem;
-	font-weight: 600;
-	line-height: 1.1;
-}
+	:global(.tabulator .tabulator-header .tabulator-col-title) {
+		font-size: 0.75rem;
+		font-weight: 600;
+		line-height: 1.1;
+	}
 
 	/* FILAS */
 	:global(.tabulator .tabulator-row) {
