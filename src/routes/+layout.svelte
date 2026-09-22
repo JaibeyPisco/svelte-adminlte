@@ -53,7 +53,7 @@
 
 <svelte:head>
 	<link rel="preload" href="./css/adminlte.css" as="style" />
-
+<title>Admin</title>
 	<link
 		rel="stylesheet"
 		href="https://cdn.jsdelivr.net/npm/@fontsource/source-sans-3@5.0.12/index.css"

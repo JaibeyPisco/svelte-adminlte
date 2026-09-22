@@ -25,7 +25,14 @@
             );
 
             const usuario = usuarios[0];
- 
+
+			
+			if(!usuario){
+				alert('Usuario no encontrado')
+				return;
+			}
+			alert('Usuario encontrado')
+
             console.log(usuario);
 
             // Notificacion('Usuario encontrado correctamente', 'success');

@@ -133,7 +133,7 @@
 <style>
 	/* TABLA */
 	:global(.tabulator) {
-		border: 1px solid #dee2e6;
+		/*border: 1px solid #dee2e6;*/
 		border-radius: 0.375rem;
 		background: #fff;
 		color: #212529;

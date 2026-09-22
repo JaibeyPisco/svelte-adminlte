@@ -7,6 +7,7 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
+    <title>Auth</title>
 
 	<link
 		rel="stylesheet"

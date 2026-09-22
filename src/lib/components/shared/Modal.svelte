@@ -1,8 +1,8 @@
 <script>
-	// import bootstrap from "bootstrap";
+	 
 	import { onMount } from "svelte";
 
-    // import {Modal as BootstrapModal } from 'bootstrap';
+   
 
     let {
         title='',

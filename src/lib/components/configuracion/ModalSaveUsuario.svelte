@@ -10,7 +10,7 @@
 		correo: ''
 	});
 
-	let modo = $state('modo');
+	let modo = $state('nuevo');
 
 	let { onSave = () => {} } = $props();
  

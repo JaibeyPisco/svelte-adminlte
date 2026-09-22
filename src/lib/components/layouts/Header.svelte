@@ -3,7 +3,7 @@
 	import ThemeToggle from './ThemeToggle.svelte';
 	import UserMenu from './UserMenu.svelte';
 
-	let { sidebarOpen, onToggleSidebar, dataSystem } = $props();
+	let { sidebarOpen, onToggleSidebar, dataSystem  } = $props();
 
 	let isFullScreen = $state(false);
 

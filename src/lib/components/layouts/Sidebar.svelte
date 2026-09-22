@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 <script>
 	import SidebarGroup from './SidebarGroup.svelte';
 	import SidebarItem from './SidebarItem.svelte';
@@ -53,15 +60,15 @@
 					<SidebarItem href="/configuracion/seguridad/usuario" icon="bi-person" label="Persona" />
 
 					<!-- SUBGRUPO -->
-					<SidebarGroup
+					<!-- <SidebarGroup
 						title="Seguridad"
 						icon="bi-shield-lock"
 						open={openSubGroup === 'seguridad'}
 						onToggle={() => toggleSubGroup('seguridad')}
-					>
+					> -->
 						<!-- Item dentro del subgrupo -->
-						<SidebarItem href="/configuracion/seguridad/usuario" icon="bi-person" label="Usuario" />
-					</SidebarGroup>
+						<SidebarItem href="/configuracion/usuario" icon="bi-person" label="Usuario" />
+					<!-- </SidebarGroup> -->
 
 					<SidebarItem href="/configuracion/empresa" icon="bi-building" label="Empresa" />
 				</SidebarGroup>
