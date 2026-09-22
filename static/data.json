@@ -7,6 +7,30 @@
       "estado": "ACTIVO",
       "password": "password",
       "id": "QTbUilOk7AI"
+    },
+    {
+      "nombre": "eddf",
+      "email": "dfsfsd",
+      "rol": "Usuario",
+      "estado": "ACTIVO",
+      "password": "dfdsf",
+      "id": "IpLuvhA4B14"
+    },
+    {
+      "nombre": "TESTING PASSWOR",
+      "email": "correo@gmail.com",
+      "rol": "Administrador",
+      "estado": "ACTIVO",
+      "password": "password",
+      "id": "PeJgidarqqY"
+    },
+    {
+      "nombre": "fdsfs",
+      "email": "fsdfsdf",
+      "rol": "Administrador",
+      "estado": "ACTIVO",
+      "password": "fsdfsdf",
+      "id": "IOnXIqdZGqM"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
