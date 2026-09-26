@@ -1,19 +1,20 @@
 <script>
 	import API from '$lib/utils/API';
 	import Modal from '../shared/Modal.svelte';
+	import TomSelect from '../ui/TomSelect.svelte';
 
 	let modal;
 
 	let form = $state({
 		id: null,
 		nombre: '',
-		correo: ''
+		correo: '',
+		rol: null
 	});
 
 	let modo = $state('nuevo');
 
 	let { onSave = () => {} } = $props();
- 
 
 	export function crear() {
 		modo = 'nuevo';
@@ -59,64 +60,71 @@
 	}
 </script>
 
-<Modal bind:this={modal} title={modo === 'nuevo' ? 'Nuevo Lugar' : 'Editar Lugar'} size="modal-md">
-	{#snippet children()}
-		<div class="mb-3">
-			<label class="form-label" for="">
-				Nombre
-				<span class="text-danger">(*)</span>
-			</label>
+<Modal bind:this={modal} title={modo === 'nuevo' ? 'Nuevo Lugar' : 'Editar Lugar'} size="modal-md" onSubmit={save} >
+	 
+		{#snippet children()}
+			<div class="mb-3">
+				<label class="form-label" for="">
+					Nombre
+					<span class="text-danger">*</span>
+				</label>
 
-			<input
-				type="text"
-				class="form-control form-control-sm"
-				bind:value={form.nombre}
-				autocomplete="off"
-			/>
-		</div>
+				<input
+					type="text"
+					class="form-control form-control-sm"
+					bind:value={form.nombre}
+					autocomplete="off"
+					required
+					name="nombre"
+				/>
+			</div>
 
-		<div class="mb-3">
-			<label class="form-label" for=""> Correo </label>
+			<div class="mb-3">
+				<label class="form-label" for=""> Correo </label>
 
-			<input
-				type="email"
-				class="form-control form-control-sm"
-				bind:value={form.correo}
-				autocomplete="off"
-			/>
-		</div>
+				<input
+					type="email"
+					class="form-control form-control-sm"
+					bind:value={form.correo}
+					autocomplete="off"
+					required
+					name="correo"
+				/>
+			</div>
 
-		<div class="mb-3">
-			<label class="form-label" for=""> Contraseña </label>
+			<div class="mb-3">
+				<label class="form-label" for=""> Contraseña </label>
 
-			<input
-				type="text"
-				class="form-control form-control-sm"
-				bind:value={form.password}
-				autocomplete="off"
-			/>
-		</div>
+				<input
+					type="password"
+					class="form-control form-control-sm"
+					bind:value={form.password}
+					autocomplete="off"
+					required
+					name="password"
+				/>
+			</div>
 
-		<div class="mb-3">
-			<label class="form-label" for="rol">Rol</label>
-			<select id="rol" class="form-select form-select-sm" bind:value={form.rol}>
-				<option value="">Seleccione un rol</option>
-				<option value="Administrador">Administrador</option>
-				<option value="Editor">Editor</option>
-				<option value="Usuario">Usuario</option>
-			</select>
-		</div>
-	{/snippet}
+			<div class="mb-3">
+				<label class="form-label" for="">
+					Rol
+					<span class="text-danger">*</span>
+				</label>
 
-	{#snippet footer()}
-		<div class="w-100 d-flex justify-content-between">
-			<button type="button" class="btn btn-secondary btn-sm" onclick={() => modal.close()}>
-				Cerrar
-			</button>
+				<TomSelect api="/roles" bind:value={form.rol} name="rol" required />
+			</div>
+		{/snippet}
 
-			<button type="button" class="btn btn-primary btn-sm" onclick={save}>
-				{modo === 'nuevo' ? 'Guardar' : 'Actualizar'}
-			</button>
-		</div>
-	{/snippet}
+		{#snippet footer()}
+			<div class="w-100 d-flex justify-content-between">
+				<button type="button" class="btn btn-secondary btn-sm" onclick={() => modal.close()}>
+					Cerrar
+				</button>
+
+				<button type="submit" class="btn btn-primary btn-sm">
+					{modo === 'nuevo' ? 'Guardar' : 'Actualizar'}
+				</button>
+			</div>
+		{/snippet}
+	 
 </Modal>

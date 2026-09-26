@@ -2,6 +2,7 @@
 	import Footer from '$lib/components/layouts/Footer.svelte';
 	import Header from '$lib/components/layouts/Header.svelte';
 	import Sidebar from '$lib/components/layouts/Sidebar.svelte';
+	import validateForm from '$lib/utils/ValidatorForm';
 
 	import { onMount } from 'svelte';
 
@@ -42,18 +43,33 @@
 
 		await import('overlayscrollbars');
 
+		document.addEventListener('submit', handleSubmit, true);
 		// await import('admin-lte');
 
 		return () => {
+			document.addEventListener('submit', handleSubmit, true);
 			document.body.classList.remove('sidebar-collapse');
 			document.body.classList.remove('sidebar-open');
 		};
 	});
+
+	const handleSubmit = (event) => {
+		const form = event.target;
+
+		if (!(form instanceof HTMLFormElement)) {
+			return;
+		}
+
+		if (!validateForm(form)) {
+			event.preventDefault();
+			event.stopPropagation();
+		}
+	};
 </script>
 
 <svelte:head>
 	<link rel="preload" href="./css/adminlte.css" as="style" />
-<title>Admin</title>
+	<title>Admin</title>
 	<link
 		rel="stylesheet"
 		href="https://cdn.jsdelivr.net/npm/@fontsource/source-sans-3@5.0.12/index.css"
@@ -88,7 +104,7 @@
 </div>
 
 <!-- Notificacion -->
-<div
+<!-- <div
     id="toast"
        class="toast align-items-center border-0 position-fixed top-0 start-50 translate-middle-x mt-3"
     style="z-index: 99999;"
@@ -106,4 +122,10 @@
             aria-label="Close"
         ></button>
     </div>
-</div>
+</div> -->
+
+<div
+	id="toast-container"
+	class="toast-container position-fixed top-0 start-50 translate-middle-x p-3"
+	style="z-index: 99999;"
+></div>

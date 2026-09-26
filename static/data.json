@@ -31,6 +31,116 @@
       "estado": "ACTIVO",
       "password": "fsdfsdf",
       "id": "IOnXIqdZGqM"
+    },
+    {
+      "nombre": "",
+      "email": "",
+      "rol": "2",
+      "estado": "ACTIVO",
+      "password": "",
+      "id": "lOo542wqXU4"
+    },
+    {
+      "nombre": "QWEADSADS",
+      "email": "DSADASDAS",
+      "rol": "1",
+      "estado": "ACTIVO",
+      "password": "SDASDAQSD",
+      "id": "4QCqTONUafo"
+    },
+    {
+      "nombre": "dfad",
+      "email": "sadasd",
+      "rol": "1",
+      "estado": "ACTIVO",
+      "password": "dadasdasd",
+      "id": "W-RJ7eDsiM8"
+    },
+    {
+      "nombre": "",
+      "email": "",
+      "rol": "1",
+      "estado": "ACTIVO",
+      "password": "",
+      "id": "QyhyEaImZek"
+    },
+    {
+      "nombre": "dsasdas",
+      "email": "dasdasd",
+      "rol": "2",
+      "estado": "ACTIVO",
+      "password": "asdasd",
+      "id": "_hdUJiBfSTM"
+    },
+    {
+      "nombre": "sdasd",
+      "email": "sdasdasda",
+      "rol": "2",
+      "estado": "ACTIVO",
+      "password": "dasdasdasd",
+      "id": "qUipn6YAGk8"
+    },
+    {
+      "nombre": "dsfwsdsd",
+      "email": "fsdfsd",
+      "rol": "1",
+      "estado": "ACTIVO",
+      "password": "sdfsdfsdf",
+      "id": "SelftUB0WMs"
+    },
+    {
+      "nombre": "",
+      "email": "",
+      "rol": "",
+      "estado": "ACTIVO",
+      "password": "",
+      "id": "mPpy2nQbPL0"
+    },
+    {
+      "nombre": "",
+      "email": "",
+      "rol": "",
+      "estado": "ACTIVO",
+      "password": "",
+      "id": "_TF59vza0F4"
+    },
+    {
+      "nombre": "",
+      "email": "",
+      "rol": "",
+      "estado": "ACTIVO",
+      "password": "",
+      "id": "dq6ZI98ozss"
+    },
+    {
+      "nombre": "DFSDFSDF",
+      "email": "DFSSDFSD@gmail.com",
+      "rol": "",
+      "estado": "ACTIVO",
+      "password": "SDFSDFSD",
+      "id": "Kt6Swy9aLCM"
+    },
+    {
+      "nombre": "cdfsadfsdfs",
+      "email": "adasdasd@gmail.com",
+      "rol": "1",
+      "estado": "ACTIVO",
+      "password": "asdasdasdasdas",
+      "id": "3oRLR5lhgRI"
+    }
+  ],
+  "roles": [
+    {
+      "id": "1",
+      "nombre": "Administrador"
+    },
+    {
+      "id": "2",
+      "nombre": "Operaciones"
+    },
+    {
+      "id": "3",
+      "nombre": "Finanzas"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

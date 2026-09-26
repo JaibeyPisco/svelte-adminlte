@@ -1,38 +1,36 @@
 <script>
-	 
-	import { onMount } from "svelte";
+	import { onMount } from 'svelte';
 
-   
+	let { title = '', children, footer, onSubmit } = $props();
 
-    let {
-        title='',
-        children,
-        footer
+	let modalInstance, modalElement, BootstrapModal;
 
-    } = $props();
+	export function open() {
+		modalInstance ??= BootstrapModal.getOrCreateInstance(modalElement);
 
-    let modalInstance, modalElement, BootstrapModal;
+		modalInstance.show();
+	}
 
-    export function open(){
+	export function close() {
+		modalInstance?.hide();
+	}
 
-        modalInstance ??= BootstrapModal.getOrCreateInstance(modalElement);
+	onMount(async () => {
+		const bootstrap = await import('bootstrap');
+		BootstrapModal = bootstrap.Modal;
+	});
 
-        modalInstance.show();
-    }
+	const handleSubmit = (event) => {
+		event.preventDefault();
 
-    export function close() {
-        modalInstance?.hide();
-    }
+		onSubmit?.();
 
-	onMount(async()=>{
-	 const bootstrap = await import('bootstrap');
-    BootstrapModal = bootstrap.Modal;
-	} )
+	}
 </script>
 
 <div bind:this={modalElement} class="modal fade" tabindex="-1" aria-hidden="true">
 	<div class="modal-dialog">
-		<div class="modal-content">
+		<form class="modal-content" novalidate onsubmit={handleSubmit}>
 			<div class="modal-header">
 				<h5 class="modal-title">
 					{title}
@@ -50,6 +48,6 @@
 					{@render footer()}
 				</div>
 			{/if}
-		</div>
+			</form>
 	</div>
 </div>
