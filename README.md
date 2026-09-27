@@ -2,7 +2,6 @@
 
 An open-source, highly optimized administrative boilerplate migrating **AdminLTE 4** and **Bootstrap 5** natively into the **SvelteKit** and **Svelte 5** ecosystem. Built for developers seeking a production-ready, minimal-dependency alternative to legacy dashboard environments.
 
-
 ## Features
 
 * AdminLTE layout adapted to SvelteKit
@@ -15,7 +14,7 @@ An open-source, highly optimized administrative boilerplate migrating **AdminLTE
 * Reusable modal component
 * Theme toggle
 * User menu
-* JSON Server development API
+* Integrated JSON Server development API
 * Minimal dependency approach
 
 ## Goals
@@ -142,59 +141,42 @@ static/
 
 ### 1. Install dependencies
 
-Clone the repository and install the dependencies:
+Clone the repository and install the development packages:
 
 ```bash
 npm install
 ```
 
-### 2. Start the development API
+### 2. Environment Variables
 
-The project currently uses **JSON Server** as a temporary backend for development and testing.
-
-Open a terminal and navigate to the `static` directory:
+Create a `.env` file in the project root based on the example configuration:
 
 ```bash
-cd static
+cp .env.example .env
 ```
 
-Start JSON Server:
+The default configuration inside `.env` defines the mock backend URL:
 
-```bash
-npx json-server data.json
+```env
+PUBLIC_API_URL=http://localhost:3000
 ```
 
-The API will be available at:
+### 3. Start Development Server
 
-```text
-http://localhost:3000
-```
-
-You should see:
-
-```text
-JSON Server started on PORT :3000
-```
-
-The `data.json` file contains the resources used to simulate the backend API.
-
-### 3. Start SvelteKit
-
-Open another terminal in the project root:
+The template comes pre-configured with a dual-execution development environment. Running the main development script will launch both the **SvelteKit client** and a **JSON Server** mock database backend simultaneously in a single terminal session:
 
 ```bash
 npm run dev
 ```
 
-The application will normally be available at:
+* **SvelteKit App:** [http://localhost:5173](http://localhost:5173)
+* **Mock JSON API REST:** [http://localhost:3000](http://localhost:3000)
 
-```text
-http://localhost:5173
-```
+The underlying mock database resources are managed directly inside `static/data.json`.
 
 ### Development Architecture
 
-During development, the application uses:
+During development, the application operates through the following local pipeline:
 
 ```text
 ┌─────────────────┐
@@ -215,19 +197,7 @@ During development, the application uses:
 └─────────────────┘
 ```
 
-JSON Server is only used as a development backend. It can later be replaced by a real API without changing the general frontend architecture.
-
-## Environment Variables
-
-Create a `.env` file in the project root:
-
-```env
-PUBLIC_API_URL=http://localhost:3000
-```
-
-This variable defines the base URL used by the API helper.
-
-The `.env` file should not be committed to the repository. Use `.env.example` to provide the required environment variables for other developers.
+JSON Server is only used to simulate the API endpoints. It can easily be replaced by your real staging or production database API without needing adjustments to the core frontend application layer.
 
 ## Contributing
 
