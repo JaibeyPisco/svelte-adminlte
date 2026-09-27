@@ -47,7 +47,7 @@
 		// await import('admin-lte');
 
 		return () => {
-			document.addEventListener('submit', handleSubmit, true);
+			document.removeEventListener('submit', handleSubmit, true);
 			document.body.classList.remove('sidebar-collapse');
 			document.body.classList.remove('sidebar-open');
 		};

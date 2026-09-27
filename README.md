@@ -1,10 +1,7 @@
-# Svelte AdminLTE
+# SvelteKit AdminLTE 4 Dashboard Template
 
-Base implementation of **AdminLTE for SvelteKit**.
+An open-source, highly optimized administrative boilerplate migrating **AdminLTE 4** and **Bootstrap 5** natively into the **SvelteKit** and **Svelte 5** ecosystem. Built for developers seeking a production-ready, minimal-dependency alternative to legacy dashboard environments.
 
-This project provides a reusable and modular AdminLTE structure adapted to SvelteKit, using native Svelte patterns whenever possible.
-
-The goal is not to port the entire AdminLTE ecosystem, but to progressively provide the essential components needed to build modern administrative applications with SvelteKit.
 
 ## Features
 
