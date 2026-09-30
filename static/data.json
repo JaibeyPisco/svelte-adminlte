@@ -1,33 +1,17 @@
 {
   "usuarios": [
     {
-      "nombre": "asdasd",
-      "email": "jaibey@gmail.com",
-      "rol": "Editor",
-      "estado": "ACTIVO",
-      "password": "password",
-      "id": "QTbUilOk7AI"
-    },
-    {
-      "nombre": "eddf",
-      "email": "dfsfsd",
-      "rol": "Usuario",
-      "estado": "ACTIVO",
-      "password": "dfdsf",
-      "id": "IpLuvhA4B14"
-    },
-    {
       "nombre": "TESTING PASSWOR",
-      "email": "correo@gmail.com",
-      "rol": "Administrador",
+      "email": "correo@gmail.c1om",
+      "rol": "1",
       "estado": "ACTIVO",
       "password": "password",
       "id": "PeJgidarqqY"
     },
     {
       "nombre": "fdsfs",
-      "email": "fsdfsdf",
-      "rol": "Administrador",
+      "email": "fsdfsdf@GMA",
+      "rol": "1",
       "estado": "ACTIVO",
       "password": "fsdfsdf",
       "id": "IOnXIqdZGqM"
@@ -127,6 +111,76 @@
       "estado": "ACTIVO",
       "password": "asdasdasdasdas",
       "id": "3oRLR5lhgRI"
+    },
+    {
+      "nombre": "áwsQAS",
+      "email": "ASa@gmail.com",
+      "rol": "1",
+      "estado": "ACTIVO",
+      "password": "adsa sdasd",
+      "id": "FyHWXnO8HgU"
+    },
+    {
+      "nombre": "asdasd",
+      "email": "ASa@gmail.com",
+      "rol": "1",
+      "estado": "ACTIVO",
+      "password": "dsasdasd",
+      "id": "6KuDmReKciU"
+    },
+    {
+      "nombre": "sdasda",
+      "email": "ASa@gmail.com",
+      "rol": "1",
+      "estado": "ACTIVO",
+      "password": "dsasdasdasd",
+      "id": "NiMRNHMNLKg"
+    },
+    {
+      "nombre": "sd asd asd",
+      "email": "ASa@gmail.com",
+      "rol": "1",
+      "estado": "ACTIVO",
+      "password": "dadasdas",
+      "id": "THtvYfNNfOY"
+    },
+    {
+      "nombre": "sdasda sdas",
+      "email": "ASa@gmail.com",
+      "rol": "2",
+      "estado": "ACTIVO",
+      "password": "dasdasd",
+      "id": "X8rL_FP-tco"
+    },
+    {
+      "nombre": "dadsa sda",
+      "email": "ASa@gmail.com",
+      "rol": "2",
+      "estado": "ACTIVO",
+      "password": "dsasdasd",
+      "id": "ycPQIdgQy64"
+    },
+    {
+      "nombre": "qw@gmail.com",
+      "email": "corrw@gmail.com",
+      "rol": "1",
+      "estado": "ACTIVO",
+      "password": "passwortd",
+      "id": "HVoUkvCoChc"
+    },
+    {
+      "nombre": "MODIFICANDO",
+      "email": "adasdasd@gmail.com",
+      "rol": "2",
+      "password": "asdasdasdasdas",
+      "id": "eMz1cEQg-g0"
+    },
+    {
+      "nombre": "MODIFICADO",
+      "email": "jaibey@gmail.com",
+      "rol": "1",
+      "password": "password",
+      "id": "yp54axEaLgs"
     }
   ],
   "roles": [

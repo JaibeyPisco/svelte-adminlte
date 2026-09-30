@@ -1,10 +1,4 @@
 
-
-
-
-
-
-
 <script>
 	import SidebarGroup from './SidebarGroup.svelte';
 	import SidebarItem from './SidebarItem.svelte';

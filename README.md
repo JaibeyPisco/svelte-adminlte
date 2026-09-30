@@ -53,9 +53,9 @@ An open-source, highly optimized administrative boilerplate migrating **AdminLTE
 
 ### Navigation
 
-* [ ] Sidebar menu
+* [x] Sidebar menu
 * [ ] Treeview menu
-* [ ] Breadcrumbs
+* [x] Breadcrumbs
 
 ### Application
 

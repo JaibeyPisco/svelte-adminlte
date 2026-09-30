@@ -133,14 +133,23 @@
 <style>
 	/* TABLA */
 	:global(.tabulator) {
-		/*border: 1px solid #dee2e6;*/
 		border-radius: 0.375rem;
 		background: #fff;
 		color: #212529;
 		font-size: 0.8125rem;
-		overflow: hidden;
-
 		height: calc(80vh - 100px);
+	}
+
+		:global(.tabulator .tabulator-row) {
+		overflow: visible;
+	}
+
+	:global(.tabulator .tabulator-cell) {
+		overflow: visible;
+	}
+
+	:global(.tabulator .dropdown-menu) {
+		z-index: 9999;
 	}
 
 	/* HEADER */

@@ -5,10 +5,11 @@
 	import Datatable from '$lib/components/shared/Datatable.svelte';
 	import { onMount } from 'svelte';
 	import API from '$lib/utils/API';
+	import ModalDelete from '$lib/components/shared/ModalDelete.svelte';
 
 	const breadcrumb = ['Configuración', 'Usuarios'];
 
-	let modalSaveUsuario, datatable;
+	let modalSaveUsuario, modalDelete, datatable;
 	let usuarios = $state([]);
 
 	const openModal = () => {
@@ -18,7 +19,6 @@
 	};
 
 	const cargarUsuarios = async () => {
- 
 		const data = await API.get('/usuarios');
 
 		usuarios = data;
@@ -27,18 +27,61 @@
 	};
 
 	const reloadTable = async (response) => {
-		
 		Notificacion(response.mensaje, 'success');
 
 		await cargarUsuarios();
 	};
 
 	const columns = [
-		// {
-		// 	title: 'ID',
-		// 	field: 'id',
-		// 	width: 80
-		// },
+		{
+			title: 'ACCION',
+			field: 'accion',
+			width: 100,
+			hozAlign: 'center',
+			formatter: (cell) => {
+				return `
+					<div class="btn-group">
+						<button
+							type="button"
+							name="editar"
+							class="btn btn-default btn-sm">
+							EDITAR
+						</button>
+
+						<button
+							type="button"
+							class="btn btn-default btn-sm dropdown-toggle dropdown-toggle-split"
+							data-bs-toggle="dropdown"
+							aria-expanded="false">
+							<span class="visually-hidden">Toggle Dropdown</span>
+						</button>
+
+						<ul class="dropdown-menu">
+							 
+							<li>
+								<button class="dropdown-item" type="button" name="eliminar">
+									Eliminar
+								</button>
+							</li>
+						</ul>
+					</div>
+				`;
+			},
+
+			cellClick: (e, cell) => {
+				const btnEdit = e.target.closest('button[name="editar"]');
+				const btnEliminar = e.target.closest('button[name="eliminar"]');
+
+				const data = cell.getRow().getData();
+				if (btnEdit) {
+					modalSaveUsuario.editar(data);
+				}
+
+				if (btnEliminar) {
+				  modalDelete.open(data, '/usuarios', data.nombre);
+				}
+			}
+		},
 		{
 			title: 'Nombre',
 			field: 'nombre'
@@ -88,40 +131,6 @@
 	</div>
 
 	<ModalSaveUsuario bind:this={modalSaveUsuario} onSave={reloadTable} />
+
+	<ModalDelete bind:this={modalDelete} onSave={reloadTable}></ModalDelete>
 </PageLayout>
-
-<style>
-	/* Custom modifications overriding default Bootstrap card styles */
-	.card-custom {
-		border: none;
-		border-radius: 16px;
-		overflow: hidden;
-		background: #ffffff;
-		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-		transition:
-			transform 0.3s ease,
-			box-shadow 0.3s ease;
-	}
-
-	/* Add a sleek lifting effect on hover */
-	.card-custom:hover {
-		transform: translateY(-8px);
-		box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-	}
-
-	/* Custom internal button styling */
-	.btn-custom {
-		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-		color: #fff;
-		border: none;
-		border-radius: 8px;
-		padding: 10px 20px;
-		font-weight: 500;
-		transition: opacity 0.2s ease;
-	}
-
-	.btn-custom:hover {
-		color: #fff;
-		opacity: 0.9;
-	}
-</style>
