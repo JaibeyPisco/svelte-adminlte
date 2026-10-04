@@ -1,28 +1,12 @@
 {
   "usuarios": [
     {
-      "nombre": "TESTING PASSWOR",
-      "email": "correo@gmail.c1om",
-      "rol": "1",
-      "estado": "ACTIVO",
-      "password": "password",
-      "id": "PeJgidarqqY"
-    },
-    {
       "nombre": "fdsfs",
       "email": "fsdfsdf@GMA",
       "rol": "1",
       "estado": "ACTIVO",
       "password": "fsdfsdf",
       "id": "IOnXIqdZGqM"
-    },
-    {
-      "nombre": "",
-      "email": "",
-      "rol": "2",
-      "estado": "ACTIVO",
-      "password": "",
-      "id": "lOo542wqXU4"
     },
     {
       "nombre": "QWEADSADS",
@@ -39,14 +23,6 @@
       "estado": "ACTIVO",
       "password": "dadasdasd",
       "id": "W-RJ7eDsiM8"
-    },
-    {
-      "nombre": "",
-      "email": "",
-      "rol": "1",
-      "estado": "ACTIVO",
-      "password": "",
-      "id": "QyhyEaImZek"
     },
     {
       "nombre": "dsasdas",
