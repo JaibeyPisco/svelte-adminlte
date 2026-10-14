@@ -173,5 +173,14 @@
       "nombre": "Finanzas"
     }
   ],
+  "empresa": [
+    {
+      "id": "slRhIsohhTY",
+      "ruc": 3333,
+      "razon_social": "222",
+      "nombre_comercial": "2322433322",
+      "logo": ""
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }
