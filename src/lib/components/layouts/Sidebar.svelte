@@ -61,10 +61,11 @@
 						onToggle={() => toggleSubGroup('seguridad')}
 					> -->
 						<!-- Item dentro del subgrupo -->
+						<SidebarItem href="/configuracion/empresa" icon="bi-building" label="Empresa" />
 						<SidebarItem href="/configuracion/usuario" icon="bi-person" label="Usuario" />
+						<SidebarItem href="/configuracion/roles" icon="bi-person" label="Roles y Permisos" />
 					<!-- </SidebarGroup> -->
 
-					<SidebarItem href="/configuracion/empresa" icon="bi-building" label="Empresa" />
 				</SidebarGroup>
 
 				<!-- OTRO GRUPO PRINCIPAL -->

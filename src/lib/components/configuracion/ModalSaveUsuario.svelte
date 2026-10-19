@@ -67,7 +67,7 @@
 
 		modal.close();
 	}
-</script>
+</script> 
 
 <Modal
 	bind:this={modal}

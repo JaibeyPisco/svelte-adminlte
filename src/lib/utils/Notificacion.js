@@ -7,6 +7,7 @@ const toastTypes = {
 };
 
 export default function (message, type = 'success') {
+
     const container = document.getElementById('toast-container');
 
     if (!container) {
@@ -20,7 +21,7 @@ export default function (message, type = 'success') {
     element.setAttribute('aria-live', 'assertive');
     element.setAttribute('aria-atomic', 'true');
 
-    element.innerHTML = `
+    element.innerHTML = /*html*/`
         <div class="d-flex">
             <div class="toast-body"></div>
             <button
